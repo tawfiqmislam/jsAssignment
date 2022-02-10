@@ -14,20 +14,43 @@ function brickCalculator(storays)
 {
     let totalBrick;
     let totalFeet = 0;
-    for(let i=1; i<=storays; i++)
-    {
-        if(i<=10)
-        {
-            totalFeet = totalFeet + 15;
-        }
-        else if(i>10 && i<=20)
-        {
-            totalFeet = totalFeet + 12;
-        }
-        else
-        {
-            totalFeet = totalFeet + 10;
-        }
+    // for(let i=1; i<=storays; i++)
+    // {
+    //     if(i<=10)
+    //     {
+    //         totalFeet = totalFeet + 15;
+    //     }
+    //     else if(i>10 && i<=20)
+    //     {
+    //         totalFeet = totalFeet + 12;
+    //     }
+    //     else
+    //     {
+    //         totalFeet = totalFeet + 10;
+    //     }
+    // }
+    // totalBrick = totalFeet * 1000;
+    // return totalBrick;
+
+    var firstPart;
+    var remaining;
+    var secondPart;
+    var thirdPart;
+    if(storays<=10){
+        totalFeet = storays * 15;
+    }
+    else if(storays<=20){
+        firstPart = 10 * 15;
+        remaining = storays - 10;
+        secondPart = remaining * 12;
+        totalFeet = firstPart + secondPart;
+    }
+    else{
+        firstPart = 10 * 15;
+        secondPart = 10 * 12;
+        remaining = storays - 20;
+        thirdPart = remaining * 10;
+        totalFeet = firstPart + secondPart + thirdPart;
     }
 
     totalBrick = totalFeet * 1000;
